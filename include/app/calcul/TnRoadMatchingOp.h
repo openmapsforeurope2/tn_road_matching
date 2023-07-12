@@ -14,16 +14,16 @@ namespace calcul{
 
 	public:
 
-		static void compute(std::string countryCode, bool verbose);
+		static void compute(std::string countryCode, std::string borderCode, bool verbose);
 
 
 	private:
 
 
-		TnRoadMatchingOp(std::string countryCode, bool verbose);
+		TnRoadMatchingOp(std::string countryCode, std::string borderCode, bool verbose);
 		~TnRoadMatchingOp();
 
-		void _init(std::string countryCode, bool verbose);
+		void _init(std::string countryCode, std::string borderCode, bool verbose);
 		void _compute();
 		//void _computeOnDoubleCC(std::string countryCodeDouble);
 
@@ -41,8 +41,12 @@ namespace calcul{
 		epg::log::EpgLogger*                               _logger;
 		//--
 		epg::log::ShapeLogger*                             _shapeLogger;
+
 		//--
 		std::string                                        _countryCode;
+		//--
+		std::string                                        _borderCode;
+
 		//--
 		bool                                               _verbose;
 

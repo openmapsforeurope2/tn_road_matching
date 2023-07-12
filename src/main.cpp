@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	std::string     epgParametersFile = "";
 	std::string     transParametersFile = "";
 	std::string     countryCode = "";
+	std::string     borderCode = "";
 	bool            verbose = true;
 
 
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
 		("help", "produce help message")
 		("c", po::value< std::string >(&epgParametersFile), "conf file")
 		("cc", po::value< std::string >(&countryCode), "country code")
+		("bc", po::value< std::string >(&borderCode), "border code")//pour ne traiter la frontière qu'avec ce pays
 		//("th", po::value< std::string >(&countryCode), "theme")
 		;
 
@@ -87,7 +89,7 @@ int main(int argc, char *argv[])
 		epg::params::tools::loadParams(*transParameters, transParametersFile);
 
 		//lancement du traitement
-		app::calcul::TnRoadMatchingOp::compute(countryCode, verbose);
+		app::calcul::TnRoadMatchingOp::compute(countryCode, borderCode,verbose);
 
 	}
 	catch (ign::Exception &e)

@@ -2,9 +2,7 @@
 #ifndef _APP_THEMEPARAMETERS_
 #define _APP_THEMEPARAMETERS_
 
-#include <string>
 #include <epg/params/ParametersT.h>
-#include <epg/SingletonT.h>
 
 //SOCLE
 #include <ign/Exception.h>
@@ -18,12 +16,6 @@
 		EDGE_NATIONAL_ROAD_CODE,
 		EDGE_EUROPEAN_ROAD_CODE,
 		NATIONAL_IDENTIFIER,
-
-		TMP_CP_TABLE,
-		TMP_CL_TABLE,
-		CF_STATUS,
-
-		LIST_ATTR_TO_CONCAT,
 
 		SQL_FILTER_EDGES_2_GENERATE_CF
 
@@ -46,12 +38,6 @@ namespace params{
 				_initParameter(NATIONAL_IDENTIFIER, "NATIONAL_IDENTIFIER");
 				_initParameter(EDGE_NATIONAL_ROAD_CODE, "EDGE_NATIONAL_ROAD_CODE");
 				_initParameter(EDGE_EUROPEAN_ROAD_CODE, "EDGE_EUROPEAN_ROAD_CODE" ) ;
-
-				_initParameter(TMP_CP_TABLE, "TMP_CP_TABLE");
-				_initParameter(TMP_CL_TABLE, "TMP_CL_TABLE");
-				_initParameter(CF_STATUS, "CF_STATUS");
-
-				_initParameter(LIST_ATTR_TO_CONCAT, "LIST_ATTR_TO_CONCAT");
 
 				_initParameter(SQL_FILTER_EDGES_2_GENERATE_CF, "SQL_FILTER_EDGES_2_GENERATE_CF");
 			}
